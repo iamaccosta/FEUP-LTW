@@ -7,5 +7,5 @@ Repository for educational purpose only.
 - __My Grade:__ 14
 
 ## ES project
-- [Project](project/README.md) 
+- [Project](project/) 
 - __Project Grade:__ 15.6
