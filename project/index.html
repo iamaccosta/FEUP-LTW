@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- A declaração DOCTYPE declara a versão do HTML usado no documento -->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="main.css">
+    <link href="index.html" rel="stylesheet">
+    <script src="main.js" type="module"></script> <!-- Anexação do JavaScript-->
+    <meta charset=UTF-8>        <!-- para caracteres acentuados   -->
+    <title>Project</title>  <!-- texto na decoração da janela -->
+  </head>
+
+<body>
+
+  <!-- Header e login -->
+  <div class="header">
+    <img src="images/logo.png">
+    
+    <div class="header-right">
+      Username: <input type="text" id="nickname">
+      Password: <input type="password" id="pass">
+      <input type="submit" value="Log In" id="login">
+    </div>
+  </div>
+
+  <!-- Buttons to open-->
+  <div class="modal-buttons">
+    <button class="modal-show" data-modal-id="new-game-modal">New Game</button>
+    <button class="modal-show" data-modal-id="configuration-modal">Configuration</button>
+    <button class="modal-show" data-modal-id="instructions-modal">Instructions</button>
+    <button class="modal-show" data-modal-id="classifications-modal">Classifications</button>
+  </div>
+
+  <!-- Parte do jogo -->
+  <div class="modal modal-hidden" id="new-game-modal">
+      
+    <h1>Mancala</h1>
+    <div class="tabuleiro" id="tabuleiro"> <!-- Tabuleiro -->
+
+      <div class="cavidades">
+        <div class="top_cavidades" id="top_cavidades"></div>
+        <div class="bottom_cavidades" id="bottom_cavidades"></div>
+      </div>
+
+    </div>
+    
+    <button class="modal-close" id="surrender">Surrender</button>
+    <button class="modal-close" id="quitGame">Quit Game</button>
+
+  </div>
+
+  <!-- Parte das configurações -->
+  <div class="modal modal-hidden" id="configuration-modal">
+    <h1>Configuration</h1>
+    <!-- Range de Cavidades -->
+    <div class="ncav">
+      <h3>Cavities</h3> <input type="range" min="3" max="6" value="0" class="slider" id="myRangeCav" > <output id = "output_cav"><h3>3</h3></output>
+
+      <h3>Seeds</h3> <input type="range" min="3" max="6" value="0" class="slider" id="myRangeSeed"> <output id = "output_seed"><h3>3</h3></output>
+
+      <div class="modes">
+        <h3>Computer</h3> 
+        <input class="mode" name="mode" id="computer" type="radio">
+        <h3>On-line</h3> 
+        <input class="mode" name="mode" id="online" type="radio" checked>
+      </div>
+
+      <div id="dificuldades">
+        <h3> Level of Difficulty</h3><br>
+        <div class="dificuldades">
+          <input class="dificuldade selected" id="easy" type="button" value="Easy">
+          <input class="dificuldade" id="medium" type="button" value="Medium">
+          <input class="dificuldade" id="hard" type="button" value="Hard">
+        </div>
+      </div>
+    
+    </div>
+    <button class="modal-close">X</button>
+  </div>
+
+  <!-- Parte das instruções -->
+  <div class="modal modal-hidden" id="instructions-modal">
+    <h1>Instructions</h1>
+    <div class="instructions">
+      Players take turns to play seeds. To take a turn, the player first chooses a non-empty hollow in the near row and picks up all the seeds contained in it.
+      <br>
+      <br>
+      The seeds are spread to the other hollows and containers. If the last seed to be spread ends on the container, the player must play again. If the last seed to be spread ends on an empty hollow, the seeds from the opposite hollow will go to the container.
+      <br>
+      <br>
+      If a player cannot play because all hollows are empty, the game ends and all the seeds on the other side of the board are captured by the other player.
+      <br>
+      <br>
+    </div>
+    <button class="modal-close">X</button>
+  </div>
+
+  <!-- Parte das Classificações -->
+  <div class="modal modal-hidden" id="classifications-modal">
+    <h1>Classifications</h1>
+    <button class="modal-close" id="classificações">X</button>
+  </div>
+
+</body>
